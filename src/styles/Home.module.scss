@@ -1,0 +1,92 @@
+@import "./global";
+.hero {
+	width: 100%;
+	height: 120vh;
+	@include flex(center, flex-start);
+
+	.hero__container1 {
+		position: absolute;
+		width: 97%;
+		height: 110vh;
+		left: 0;
+		right: 0;
+		top: 20px;
+		margin-inline: auto;
+		background: $background1;
+		border-radius: 24px;
+		z-index: 3;
+		padding-block: 100px 50px;
+		@include flex(space-between, center);
+		flex-direction: column;
+		h1 {
+			color: $white;
+			text-transform: uppercase;
+			text-align: center;
+			font-weight: bold;
+			font-size: 42px;
+			line-height: 55px;
+		}
+		.cta {
+			width: 40%;
+			height: 70px;
+			background-color: $white;
+			border-radius: 20px;
+			@include flex(space-between, center);
+			padding: 10px 10px 10px 30px;
+			button {
+				width: 40%;
+				height: 100%;
+				background-color: $cta;
+				color: $white;
+				border-radius: 10px;
+				font-size: 20px;
+				border: none;
+			}
+			div {
+				// background-color: red;
+				height: 80%;
+				.title {
+					text-transform: uppercase;
+					margin-bottom: 5px;
+					color: $color2;
+					font-weight: bold;
+					font-size: 14px;
+				}
+				.option {
+					text-transform: uppercase;
+					font-weight: bold;
+					font-size: 17px;
+				}
+				&:first-child {
+					border-right: 2px solid $color2;
+					padding-right: 20px;
+				}
+			}
+		}
+	}
+	.hero__container2 {
+		position: absolute;
+		width: 97%;
+		height: 110vh;
+		left: 0;
+		right: 0;
+		margin-inline: auto;
+		top: 20px;
+		background: $gradient1;
+		border-radius: 24px;
+		z-index: 2;
+	}
+	.hero__image {
+		position: absolute;
+		width: 97%;
+		height: 100vh;
+		left: 0;
+		right: 0;
+		margin-inline: auto;
+		top: 20px;
+		z-index: 1;
+		background: url("../assets/images/hero_image.png");
+		background-position: 0 -90px;
+		border-radius: 24px;
+	}
+}
