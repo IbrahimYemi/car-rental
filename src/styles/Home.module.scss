@@ -247,9 +247,11 @@
 	}
 	// margin-top: 100px;
 }
-#search {
+#search,
+#manufacturers {
 	width: 100%;
 	height: auto;
+	margin-bottom: 60px;
 	.search__container {
 		@include container;
 		@include flex(flex-start, center);

@@ -1,15 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import { BsChevronDown } from "react-icons/bs";
 
 import styles from "@/styles/Home.module.scss";
 import trending from "@/assets/data/trending_cars";
 import search_types from "@/assets/data/types";
 
-import AirConditioned from "../assets/images/air-conditioned.png";
-import DriveType from "../assets/images/type.png";
-import PeopleImage from "../assets/images/people.png";
+import CarCard from "@/components/CarCard";
 
 export default function Home() {
 	return (
@@ -76,34 +73,7 @@ export default function Home() {
 						<h1>Trending cars</h1>
 						<article>
 							{trending.map((e, index) => {
-								return (
-									<div key={index} className={styles.car__card}>
-										<div className={styles.card__image}>
-											<Image src={e.image} alt="" />
-										</div>
-										<div className={styles.card__text}>
-											<h3>{e.name}</h3>
-											<div className={styles.car__pros}>
-												<div>
-													<Image src={PeopleImage} />
-													<p>{e.seats} seats</p>
-												</div>
-												<div>
-													<Image src={AirConditioned} />
-													<p> Air-Conditioned</p>
-												</div>
-												<div>
-													<Image src={PeopleImage} />
-													<p> {e.doors} Doors</p>
-												</div>
-												<div>
-													<Image src={DriveType} />
-													<p> {e.type}</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								);
+								return <CarCard {...e} key={index} priority="lazy" />;
 							})}
 						</article>
 					</div>
@@ -125,6 +95,18 @@ export default function Home() {
 										</div>
 									</div>
 								);
+							})}
+						</article>
+					</div>
+				</section>
+
+				<section id={styles.manufacturers}>
+					<div className={styles.search__container}>
+						<p>Vehicle Manufacturer</p>
+						<h1>Search by Manufacturer</h1>
+						<article>
+							{search_types.map((e, index) => {
+								return <div key={index} className={styles.car__card}></div>;
 							})}
 						</article>
 					</div>
