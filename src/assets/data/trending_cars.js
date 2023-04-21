@@ -42,7 +42,7 @@ const trending = [
 		image: ToyotaTacoma,
 	},
 	{
-		name: "ChevroletTrailblazer",
+		name: "Chevrolet Trailblazer",
 		seats: 8,
 		doors: 4,
 		type: "Manual",

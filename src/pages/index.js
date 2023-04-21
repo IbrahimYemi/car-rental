@@ -5,6 +5,7 @@ import { BsChevronDown } from "react-icons/bs";
 
 import styles from "@/styles/Home.module.scss";
 import trending from "@/assets/data/trending_cars";
+import search_types from "@/assets/data/types";
 
 import AirConditioned from "../assets/images/air-conditioned.png";
 import DriveType from "../assets/images/type.png";
@@ -100,6 +101,27 @@ export default function Home() {
 													<p> {e.type}</p>
 												</div>
 											</div>
+										</div>
+									</div>
+								);
+							})}
+						</article>
+					</div>
+				</section>
+
+				<section id={styles.search}>
+					<div className={styles.search__container}>
+						<p>Vehicle Type</p>
+						<h1>Search by Type</h1>
+						<article>
+							{search_types.map((e, index) => {
+								return (
+									<div key={index} className={styles.car__card}>
+										<div className={styles.card__image}>
+											<Image src={e.image} alt="" />
+										</div>
+										<div className={styles.card__text}>
+											<h3>{e.type}</h3>
 										</div>
 									</div>
 								);

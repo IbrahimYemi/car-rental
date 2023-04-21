@@ -189,6 +189,7 @@
 #trending {
 	width: 100%;
 	height: auto;
+	margin-bottom: 70px;
 	.trending__container {
 		@include container;
 		@include flex(flex-start, center);
@@ -210,6 +211,7 @@
 				border-radius: 5px;
 				filter: drop-shadow(0px 4px 8px rgba(44, 0, 81, 0.15));
 				background-color: $white;
+				overflow: hidden;
 				.card__image {
 					width: 100%;
 					height: 60%;
@@ -239,6 +241,53 @@
 							font-size: 12px;
 						}
 					}
+				}
+			}
+		}
+	}
+	// margin-top: 100px;
+}
+#search {
+	width: 100%;
+	height: auto;
+	.search__container {
+		@include container;
+		@include flex(flex-start, center);
+		flex-direction: column;
+		padding: 20px 0;
+		h1 {
+			text-transform: uppercase;
+			margin-bottom: 20px;
+		}
+		p {
+			color: rgba(194, 194, 194, 1);
+			margin-bottom: 10px;
+		}
+		article {
+			width: 80%;
+			height: auto;
+			margin-block: 20px;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 40px 50px;
+			.car__card {
+				height: 230px;
+				border-radius: 8px;
+				filter: drop-shadow(0px 4px 8px rgba(44, 0, 81, 0.15));
+				background-color: $white;
+				overflow: hidden;
+				.card__image {
+					width: 100%;
+					height: 80%;
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.card__text {
+					width: 100%;
+					height: 20%;
+					@include flex(center, center);
 				}
 			}
 		}
