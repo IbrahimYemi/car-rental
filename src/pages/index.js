@@ -44,6 +44,27 @@ export default function Home() {
 					<div className={styles.hero__container2}></div>
 					<div className={styles.hero__image}></div>
 				</section>
+
+				<section className={styles.rent}>
+					<div className={`${styles.circle} ${styles.circle1}`}></div>
+					<div className={`${styles.circle} ${styles.circle2}`}></div>
+					<div className={`${styles.circle} ${styles.circle3}`}></div>
+
+					<h1 className={styles.rent__title}>Rent a car in 3 steps</h1>
+					<div className={styles.rent__steps}>
+						{[
+							{ title: "Search", desc: "Find a car of your choice using the filter options" },
+							{ title: "Confirm availability", desc: "Check if car is available at the moment or not" },
+							{ title: "Place order", desc: "Place order on your choice of car" },
+						].map((step, index) => (
+							<div key={index} className={styles.step}>
+								<div className={styles.step__number}>{index + 1}</div>
+								<h3>{step.title}</h3>
+								<p>{step.desc}</p>
+							</div>
+						))}
+					</div>
+				</section>
 			</main>
 		</div>
 	);
