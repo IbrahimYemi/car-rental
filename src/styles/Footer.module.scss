@@ -1,9 +1,9 @@
 @import "./_global.scss";
 
 .footer {
-	height: 70px;
-
-	background-color: #744c9d;
+	height: auto;
+	background: $footerBg;
+	padding: 50px 0;
 }
 .footer__container {
 	@include container;
@@ -11,19 +11,40 @@
 	color: $white;
 	font-size: 24px;
 	height: 100%;
-}
+	flex-direction: column;
+	gap: 20px;
+	h3 {
+		text-transform: uppercase;
+		font-size: 20px;
+	}
+	.footer__navigation {
+		width: 25%;
+		min-width: 150px;
+		@include flex(space-between, center);
 
-.header__navigation {
-	width: 30%;
-	min-width: 200px;
-	height: 70%;
-	@include flex(space-between, center);
-
-	a {
-		color: $white;
-		font-size: 16px;
-		&:hover {
-			text-decoration: underline;
+		a {
+			color: $white;
+			font-size: 14px;
+			&:hover {
+				text-decoration: underline;
+			}
 		}
+	}
+	.footer__socials {
+		width: 140px;
+		@include flex(space-between, center);
+		svg {
+			font-size: 24px;
+			&:hover {
+				cursor: pointer;
+			}
+			&:nth-child(2) {
+				font-size: 20px;
+			}
+		}
+	}
+	p {
+		font-weight: 300;
+		font-size: 16px;
 	}
 }

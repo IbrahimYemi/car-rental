@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }) {
 		<div className="App">
 			<Header />
 			<Component {...pageProps} />
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 }
