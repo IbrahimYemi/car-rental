@@ -26,13 +26,44 @@
 			font-size: 42px;
 			line-height: 55px;
 		}
-		.cta {
-			width: 40%;
+		.ctas {
+			width: 50%;
 			height: 70px;
 			background-color: $white;
 			border-radius: 20px;
 			@include flex(space-between, center);
 			padding: 10px 10px 10px 30px;
+			article {
+				width: 45%;
+				height: 100%;
+				@include flex(space-between, center);
+				.cta {
+					height: 80%;
+
+					.title {
+						text-transform: uppercase;
+						margin-bottom: 5px;
+						color: $color2;
+						font-weight: bold;
+						font-size: 14px;
+					}
+					.option__container {
+						@include flex(space-between, center);
+						.option {
+							text-transform: uppercase;
+							font-weight: bold;
+							font-size: 17px;
+						}
+					}
+					&:first-child {
+						border-right: 2px solid $color2;
+						padding-right: 20px;
+					}
+					&:nth-child(2) {
+						width: 35%;
+					}
+				}
+			}
 			button {
 				width: 40%;
 				height: 100%;
@@ -41,26 +72,6 @@
 				border-radius: 10px;
 				font-size: 20px;
 				border: none;
-			}
-			div {
-				// background-color: red;
-				height: 80%;
-				.title {
-					text-transform: uppercase;
-					margin-bottom: 5px;
-					color: $color2;
-					font-weight: bold;
-					font-size: 14px;
-				}
-				.option {
-					text-transform: uppercase;
-					font-weight: bold;
-					font-size: 17px;
-				}
-				&:first-child {
-					border-right: 2px solid $color2;
-					padding-right: 20px;
-				}
 			}
 		}
 	}

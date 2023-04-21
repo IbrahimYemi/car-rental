@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
+import { BsChevronDown } from "react-icons/bs";
 
 import HeroImage from "../assets/images/hero_image.png";
 
@@ -20,17 +21,25 @@ export default function Home() {
 						<h1>
 							Rent a car, <br /> pull up in style{" "}
 						</h1>
-						<div className={styles.cta}>
-							<div>
-								<p className={styles.title}>Manufacturer</p>
-								<p className={styles.option}>Toyota</p>
-							</div>
-							<div>
-								<p className={styles.title}>Type</p>
-								<p className={styles.option}>SEDAN</p>
-							</div>
+						<section className={styles.ctas}>
+							<article>
+								<div className={styles.cta}>
+									<p className={styles.title}>Manufacturer</p>
+									<div className={styles.option__container}>
+										<p className={styles.option}>Toyota</p>
+										<BsChevronDown style={{ fontSize: "12px" }} />
+									</div>
+								</div>
+								<div className={styles.cta}>
+									<p className={styles.title}>Type</p>
+									<div className={styles.option__container}>
+										<p className={styles.option}>SEDAN</p>
+										<BsChevronDown style={{ fontSize: "12px" }} />
+									</div>
+								</div>
+							</article>
 							<button>Find car</button>
-						</div>
+						</section>
 					</div>
 					<div className={styles.hero__container2}></div>
 					<div className={styles.hero__image}></div>
