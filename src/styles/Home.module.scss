@@ -1,19 +1,21 @@
 @import "./global";
 .hero {
 	width: 100%;
-	height: 110vh;
+	height: 850px;
+	// background-color: green;
 	@include flex(center, flex-start);
 
 	.hero__container1 {
 		position: absolute;
 		width: 97%;
-		height: 110vh;
+		height: 830px;
 		left: 0;
 		right: 0;
 		top: 20px;
 		margin-inline: auto;
 		background: $background1;
 		border-radius: 24px;
+
 		z-index: 3;
 		padding-block: 100px 50px;
 		@include flex(space-between, center);
@@ -78,7 +80,7 @@
 	.hero__container2 {
 		position: absolute;
 		width: 97%;
-		height: 110vh;
+		height: 830px;
 		left: 0;
 		right: 0;
 		margin-inline: auto;
@@ -90,22 +92,23 @@
 	.hero__image {
 		position: absolute;
 		width: 97%;
-		height: 100vh;
+		height: 830px;
 		left: 0;
 		right: 0;
 		margin-inline: auto;
 		top: 20px;
 		z-index: 1;
 		background: url("../assets/images/hero_image.png");
+		background-repeat: no-repeat;
 		background-position: 0 -90px;
+		background-size: 100% 100%;
 		border-radius: 24px;
 	}
 }
 
 .rent {
 	width: 100%;
-	height: 80vh;
-	// background-color: red;
+	height: 580px;
 	position: relative;
 	overflow: hidden;
 	display: flex;
@@ -181,4 +184,64 @@
 			}
 		}
 	}
+}
+
+#trending {
+	width: 100%;
+	height: auto;
+	.trending__container {
+		@include container;
+		@include flex(flex-start, center);
+		flex-direction: column;
+		padding: 20px 0;
+		h1 {
+			text-transform: uppercase;
+			margin-bottom: 20px;
+		}
+		article {
+			width: 80%;
+			height: auto;
+			margin-block: 20px;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 40px 50px;
+			.car__card {
+				height: 300px;
+				border-radius: 5px;
+				filter: drop-shadow(0px 4px 8px rgba(44, 0, 81, 0.15));
+				background-color: $white;
+				.card__image {
+					width: 100%;
+					height: 60%;
+					background-color: green;
+					background: linear-gradient(0deg, rgba(116, 76, 157, 0.05), rgba(116, 76, 157, 0.05));
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.card__text {
+					width: 100%;
+					height: 40%;
+					padding: 20px;
+					height: 3px;
+					h3 {
+						font-weight: 500;
+					}
+					.car__pros {
+						margin-top: 20px;
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						gap: 10px;
+						div {
+							@include flex(flex-start, center);
+							gap: 5px;
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+	// margin-top: 100px;
 }

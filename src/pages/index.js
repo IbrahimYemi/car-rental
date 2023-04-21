@@ -1,10 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.scss";
 import { BsChevronDown } from "react-icons/bs";
 
-import HeroImage from "../assets/images/hero_image.png";
+import styles from "@/styles/Home.module.scss";
+import trending from "@/assets/data/trending_cars";
+
+import AirConditioned from "../assets/images/air-conditioned.png";
+import DriveType from "../assets/images/type.png";
+import PeopleImage from "../assets/images/people.png";
 
 export default function Home() {
 	return (
@@ -63,6 +67,44 @@ export default function Home() {
 								<p>{step.desc}</p>
 							</div>
 						))}
+					</div>
+				</section>
+
+				<section id={styles.trending}>
+					<div className={styles.trending__container}>
+						<h1>Trending cars</h1>
+						<article>
+							{trending.map((e, index) => {
+								return (
+									<div key={index} className={styles.car__card}>
+										<div className={styles.card__image}>
+											<Image src={e.image} alt="" />
+										</div>
+										<div className={styles.card__text}>
+											<h3>{e.name}</h3>
+											<div className={styles.car__pros}>
+												<div>
+													<Image src={PeopleImage} />
+													<p>{e.seats} seats</p>
+												</div>
+												<div>
+													<Image src={AirConditioned} />
+													<p> Air-Conditioned</p>
+												</div>
+												<div>
+													<Image src={PeopleImage} />
+													<p> {e.doors} Doors</p>
+												</div>
+												<div>
+													<Image src={DriveType} />
+													<p> {e.type}</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								);
+							})}
+						</article>
 					</div>
 				</section>
 			</main>
