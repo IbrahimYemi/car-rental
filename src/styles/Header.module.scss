@@ -2,15 +2,18 @@
 
 .header {
 	height: 70px;
-	position: absolute;
-	top: 20px;
+	position: fixed;
 	left: 0;
 	z-index: 10;
 	right: 0;
+	background: linear-gradient(0deg, rgba(116, 76, 157, 0.15), rgba(116, 76, 157, 0.15)), #141414;
+	top: 0;
 }
+
 .header__container {
 	@include container;
 	@include flex(space-between, center);
+
 	padding: 0 20px;
 	color: $white;
 	font-size: 24px;

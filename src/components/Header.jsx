@@ -4,12 +4,12 @@ import Link from "next/link";
 
 const Header = () => {
 	return (
-		<header className={styles.header}>
+		<header className={styles.header} id="header">
 			<div className={styles.header__container}>
 				<Link href="/">Ritz Car Hire</Link>
 				<nav className={styles.header__navigation}>
 					<Link href="/">Home</Link>
-					<Link href="/">Catalogue</Link>
+					<Link href="/catalogue">Catalogue</Link>
 					<Link href="/">Hire</Link>
 					<Link href="/">Contact Us</Link>
 				</nav>

@@ -24,3 +24,9 @@ a {
 main {
 	height: auto;
 }
+
+#Home #header {
+	background: unset !important;
+	top: 20px;
+	position: absolute;
+}

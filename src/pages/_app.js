@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 export default function App({ Component, pageProps }) {
 	return (
-		<div className="App">
+		<div id={Component.name}>
 			<Header />
 			<Component {...pageProps} />
 			<Footer />
