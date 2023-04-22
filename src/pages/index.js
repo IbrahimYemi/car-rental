@@ -5,10 +5,12 @@ import { BsChevronDown } from "react-icons/bs";
 import styles from "@/styles/Home.module.scss";
 import trending from "@/assets/data/trending_cars";
 import search_types from "@/assets/data/types";
+import manufacturers from "@/assets/data/manufacturers";
 
 import CarCard from "@/components/CarCard";
 
 export default function Home() {
+	let manufacturerWidths = [80, 90, 100, 90, 80, 85];
 	return (
 		<div className="App">
 			<Head>
@@ -101,12 +103,23 @@ export default function Home() {
 				</section>
 
 				<section id={styles.manufacturers}>
-					<div className={styles.search__container}>
+					<div className={styles.manufacturers__container}>
 						<p>Vehicle Manufacturer</p>
 						<h1>Search by Manufacturer</h1>
 						<article>
-							{search_types.map((e, index) => {
-								return <div key={index} className={styles.car__card}></div>;
+							{manufacturers.map((manufacturers_row, index) => {
+								return (
+									<div
+										key={index}
+										className={styles.manufacturer_row}
+										style={{ gridTemplateColumns: `repeat(${manufacturers_row.length} , 1fr)`, width: `${manufacturerWidths[index]}%` }}>
+										{manufacturers_row.map((manufacturer, index) => (
+											<div key={index} className={styles.car__card}>
+												<Image src={manufacturer.image}></Image>
+											</div>
+										))}
+									</div>
+								);
 							})}
 						</article>
 					</div>

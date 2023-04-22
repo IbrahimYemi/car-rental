@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/Home.module.scss";
+import styles from "../styles/car_card.module.scss";
 import Image from "next/image";
 
 import AirConditioned from "../assets/images/air-conditioned.png";
