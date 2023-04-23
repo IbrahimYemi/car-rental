@@ -63,7 +63,7 @@ const Catalogue = () => {
 				<article className={styles.content__catalogue}>
 					{cars.map((car, index) => {
 						if (index + 1 <= limit) {
-							return <CarCard {...car} />;
+							return <CarCard {...car} key={index} loading="lazy" />;
 						}
 					})}
 				</article>

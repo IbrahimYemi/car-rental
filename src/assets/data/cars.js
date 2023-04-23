@@ -148,6 +148,4 @@ const cars = [
 	},
 ];
 
-console.log(cars.length);
-
 export default cars;

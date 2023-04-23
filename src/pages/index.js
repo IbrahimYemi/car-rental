@@ -75,7 +75,7 @@ export default function Home() {
 						<h1>Trending cars</h1>
 						<article>
 							{trending.map((e, index) => {
-								return <CarCard {...e} key={index} priority="lazy" />;
+								return <CarCard {...e} key={index} loading="lazy" />;
 							})}
 						</article>
 					</div>
