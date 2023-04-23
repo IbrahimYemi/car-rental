@@ -30,7 +30,7 @@ main {
 	top: 20px;
 	position: absolute;
 }
-.loadMore {
+button {
 	background: linear-gradient(0deg, rgba(116, 76, 157, 0.15), rgba(116, 76, 157, 0.15)), #141414;
 	height: 40px;
 	padding: 0 30px;
@@ -40,4 +40,8 @@ main {
 	font-weight: bold;
 	color: white;
 	display: block;
+}
+button:hover {
+	cursor: pointer;
+	opacity: 0.7;
 }

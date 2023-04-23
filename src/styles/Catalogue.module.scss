@@ -9,8 +9,39 @@
 	#filters {
 		width: 25%;
 		height: 100%;
-		background-color: yellow;
+		.catalogue__title {
+			margin-bottom: 20px;
+		}
+		form {
+			height: auto;
+			width: 100%;
+			.catalogue__filter {
+				margin-bottom: 30px;
+				h3 {
+					opacity: 0.7;
+					margin-bottom: 10px;
+					font-size: 14px;
+				}
+				.filter__option {
+					@include flex(flex-start, center);
+					gap: 10px;
+					margin-bottom: 10px;
+					label {
+						display: block;
+						font-size: 13px;
+						font-weight: bold;
+					}
+					input {
+						accent-color: #9b59b6;
+					}
+					input:checked:before {
+						background-color: red;
+					}
+				}
+			}
+		}
 	}
+
 	#content {
 		width: 75%;
 		height: 100%;
