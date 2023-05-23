@@ -11,7 +11,7 @@ const search_types = [
 		image: SedanImage,
 	},
 	{
-		type: "Pick Up",
+		type: "Pick-Up",
 		image: PickupImage,
 	},
 	{

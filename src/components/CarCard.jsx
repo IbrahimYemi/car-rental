@@ -1,13 +1,15 @@
 import React from "react";
 import styles from "../styles/car_card.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 import AirConditioned from "../assets/images/air-conditioned.png";
 import DriveType from "../assets/images/type.png";
 import PeopleImage from "../assets/images/people.png";
-const CarCard = ({ image, seats, doors, type, name, loading }) => {
+
+const CarCard = ({ image, seats, doors, type, name, loading, id }) => {
 	return (
-		<div className={styles.car__card}>
+		<Link href={`/catalogue/${id}`} className={styles.car__card}>
 			<div className={styles.card__image}>
 				<Image src={image} alt={name} loading={loading} />
 			</div>
@@ -32,7 +34,7 @@ const CarCard = ({ image, seats, doors, type, name, loading }) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

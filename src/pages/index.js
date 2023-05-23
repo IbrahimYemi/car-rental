@@ -1,14 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
-import { BsChevronDown } from "react-icons/bs";
+import Link from "next/link";
 
 import styles from "@/styles/Home.module.scss";
+
+import CarCard from "@/components/CarCard";
+
 import trending from "@/assets/data/trending_cars";
 import search_types from "@/assets/data/types";
 import manufacturers from "@/assets/data/manufacturers";
 
-import CarCard from "@/components/CarCard";
-
+import { BsChevronDown } from "react-icons/bs";
 export default function Home() {
 	let manufacturerWidths = [80, 90, 100, 90, 80, 85];
 	return (
@@ -75,7 +77,7 @@ export default function Home() {
 						<h1>Trending cars</h1>
 						<article>
 							{trending.map((e, index) => {
-								return <CarCard {...e} key={index} loading="lazy" />;
+								return <CarCard {...e} key={index} loading="lazy" id={index} />;
 							})}
 						</article>
 					</div>
@@ -88,14 +90,14 @@ export default function Home() {
 						<article>
 							{search_types.map((e, index) => {
 								return (
-									<div key={index} className={styles.car__card}>
+									<Link href={`/catalogue?q=${e.type.toLowerCase()}`} key={index} className={styles.car__card}>
 										<div className={styles.card__image}>
 											<Image src={e.image} alt="" />
 										</div>
 										<div className={styles.card__text}>
 											<h3>{e.type}</h3>
 										</div>
-									</div>
+									</Link>
 								);
 							})}
 						</article>

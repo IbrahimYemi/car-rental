@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import styles from "../styles/Catalogue.module.scss";
+import styles from "../../styles/Catalogue.module.scss";
+import { useRouter } from "next/router";
 
 import cars from "@/assets/data/cars";
 import filters from "@/assets/data/filters";
 
 import CarCard from "@/components/CarCard";
 const Catalogue = () => {
+	const router = useRouter();
+	const { query } = router;
+
 	let [limit, setLimit] = useState(9);
 	let [filter, setFilter] = useState(
 		filters.map((e) => {
@@ -13,7 +17,7 @@ const Catalogue = () => {
 		})
 	);
 	function loadMoreCars() {
-		setLimit((prev) => prev + 3);
+		setLimit((prev) => (prev + 3 < cars.length ? prev + 3 : cars.length));
 	}
 
 	function filterCars(e) {
@@ -59,16 +63,15 @@ const Catalogue = () => {
 			<section id={styles.content}>
 				<h3 className={styles.content__title}>CATALOGUE</h3>
 				<p className={styles.content__desc}>Showing {limit} of 20 cars</p>
-
 				<article className={styles.content__catalogue}>
 					{cars.map((car, index) => {
 						if (index + 1 <= limit) {
-							return <CarCard {...car} key={index} loading="lazy" />;
+							return <CarCard {...car} key={index} loading="lazy" id={index} />;
 						}
 					})}
 				</article>
 
-				{limit <= 20 && (
+				{limit < cars.length && (
 					<button className="loadMore" onClick={() => loadMoreCars()}>
 						See More
 					</button>
