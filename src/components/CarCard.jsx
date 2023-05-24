@@ -7,11 +7,11 @@ import AirConditioned from "../assets/images/air-conditioned.png";
 import DriveType from "../assets/images/type.png";
 import PeopleImage from "../assets/images/people.png";
 
-const CarCard = ({ image, seats, doors, type, name, loading, id }) => {
+const CarCard = ({ image, seats, doors, transmission, name, loading, id }) => {
 	return (
 		<Link href={`/catalogue/${id}`} className={styles.car__card}>
 			<div className={styles.card__image}>
-				<Image src={image} alt={name} loading={loading} />
+				<Image src={image} alt={name} priority="high" />
 			</div>
 			<div className={styles.card__text}>
 				<h3>{name}</h3>
@@ -30,7 +30,7 @@ const CarCard = ({ image, seats, doors, type, name, loading, id }) => {
 					</div>
 					<div>
 						<Image src={DriveType} alt="Drive type illustration" loading={loading} />
-						<p> {type}</p>
+						<p> {transmission}</p>
 					</div>
 				</div>
 			</div>
